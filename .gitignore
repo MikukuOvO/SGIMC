@@ -94,4 +94,4 @@ ENV/
 # cython generated c-files
 sgimc/ops.c
 
-experiments/sgimc
+experiments/n_instances/data

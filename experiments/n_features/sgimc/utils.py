@@ -55,7 +55,7 @@ def sparsify(R, sparsity=0.10, random_state=None):
 
     mask = random_state.uniform(size=R.shape) < sparsity
     R_coo = coo_matrix((R[mask], np.nonzero(mask)),
-                       shape=R.shape, dtype=np.float)
+                       shape=R.shape, dtype=np.float64)
 
     return R_coo.tocsr(), mask
 
@@ -63,7 +63,7 @@ def sparsify(R, sparsity=0.10, random_state=None):
 def sparsify_with_mask(R, mask):
     """Sparcify the given matrix with the mask."""
     R_coo = coo_matrix((R[mask], np.nonzero(mask)),
-                       shape=R.shape, dtype=np.float)
+                       shape=R.shape, dtype=np.float64)
 
     return R_coo.tocsr()
 
